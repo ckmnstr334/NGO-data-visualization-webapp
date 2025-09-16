@@ -1,5 +1,4 @@
 # NGO Data Visualization Landing Page and Donations Service
-#### Video Demo:  <https://youtu.be/2j58CVtmS1U>
 #### Description:
 ## Project description
 The project is a landing page for the NGO that I work for which helps provide education for underprivileged children (it's been anonymized as "MyNGO"). The goal is to visualize the impact the NGO has as well as the potential impact an individual donor could have by dynamically showcasing its impact data. A slider on the landing page can be dragged to change the donation amount, and the impact the donation has will be dynamically displayed below. Additionally, the KPs hero image will change based on the donation to vizualize the impact further and emotionalize donors.
