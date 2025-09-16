@@ -1,0 +1,227 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Your Impact Visualized
+{% endblock %}
+
+{% block main %}
+    <section class="hero" id="hero" style="--hero-img: url('static/class70.webp')">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1>Your impact - calculated.</h1>
+                <p>With your help we put a lot of things right in 2025. See how your contribution impacts the lives of people around the planet - we did the math!</p>
+
+                <form action="/donate" method="POST" id="donation-form">
+                    <div class="donation-slider">
+                        <label for="range1">
+                            Choose your donation amount: <span id="slider-value">{{ slider_default }}</span>€
+                        </label>
+                        <input type="range" class="form-range" id="range1" value="{{ slider_default }}" min="{{ slider_min }}" max="{{ slider_max }}" step="1" name="amount">
+                    </div>
+
+                <!-- Button sends form via POST -->
+                    <button type="submit" class="btn btn-primary">Donate Now</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h2>What you can achieve:</h2>
+    </section>
+    <section class="data-cards">
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+                <div class="card">
+                    <img src="static/beneficiaries.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h2 class="card-title"><span id="beneficiaries-count" data-full-value="{{ beneficiaries }}">{{ beneficiaries }}</span> Beneficiaries</h2>
+                        <p class="card-text">We've helped over {{ beneficiaries }} children with housing, food and education last year and set them on a trajectory for a brighter future.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="static/projects.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h2 class="card-title"><span id="projects-count" data-full-value="{{ projects }}">{{ projects }}</span> Projects</h2>
+                        <p class="card-text">We successfully complete {{ projects }} projects in 2025. Brick by brick we shape the future of the planet's youth.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="static/teachers.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h2 class="card-title"><span id="teachers-count" data-full-value="{{ teachers }}">{{ teachers }}</span> Teachers</h2>
+                        <p class="card-text">With your help we employ {{ teachers }} teachers who work tirelessly to give children new perspectives and hope.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="static/hope.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h2 class="card-title">Unlimited Hope</h2>
+                        <p class="card-text">No matter the contribution: Any amount of help gives us hope that there are likeminded people on the planet who believe in children as the key to a better tomorrow.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h2>Frequently Asked Questions:</h2>
+    </section>
+    <section class="faq">
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        What does My NGO do exactly?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>We transform lives.</strong> MyNGO provides safe housing, nutritious meals, and quality education to children in underserved communities around the globe. Our goal is to break the cycle of poverty and give every child the tools they need to build a better future.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        What happens with my donation?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>Every dollar counts.</strong> Donations directly fund our programs—building schools and shelters, delivering food supplies, providing learning materials, and supporting local educators and volunteers. We keep administrative costs low so that the majority of your contribution goes straight to helping children.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Where does MyNGO work?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>Every dollar counts.</strong> Donations directly fund our programs—building schools and shelters, delivering food supplies, providing learning materials, and supporting local educators and volunteers. We keep administrative costs low so that the majority of your contribution goes straight to helping children.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Is MyNGO legitimate?
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>Absolutely.</strong> MyNGO is a registered nonprofit organization, regularly audited for transparency and accountability. We comply with international standards for humanitarian work and maintain partnerships with respected global organizations.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        How do I know my money is getting where it needs to be?
+                    </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>Full transparency.</strong> We provide annual impact reports, financial statements, and real stories from the field so you can see exactly how your support changes lives. We believe in earning your trust through clear communication and measurable results.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const slider = document.getElementById('range1');
+            const sliderValue = document.getElementById('slider-value');
+
+            const beneficiariesEl = document.getElementById('beneficiaries-count');
+            const projectsEl = document.getElementById('projects-count');
+            const teachersEl = document.getElementById('teachers-count');
+
+            const beneficiariesFull = parseInt(beneficiariesEl.dataset.fullValue);
+            const projectsFull = parseInt(projectsEl.dataset.fullValue);
+            const teachersFull = parseInt(teachersEl.dataset.fullValue);
+
+            const min = parseInt(slider.min);
+            const max = parseInt(slider.max);
+
+            const hero = document.querySelector(".hero");
+
+            const heroImages = [{
+                max: 0.2,
+                img: "{{ url_for('static', filename='class20.webp') }}"
+            },
+                {
+                    max: 0.45,
+                    img: "{{ url_for('static', filename='class45.webp') }}"
+                },
+                {
+                    max: 0.7,
+                    img: "{{ url_for('static', filename='class70.webp') }}"
+                },
+                {
+                    max: 1.0,
+                    img: "{{ url_for('static', filename='class100.webp') }}"
+                }
+            ];
+
+        // Separate function for image
+            function updateImg(currentValue) {
+                const value = parseInt(currentValue);
+                const ratio = value / max; // 0.0 to 1.0
+
+                let selected = heroImages[heroImages.length - 1].img;
+                for (let i = 0; i < heroImages.length; i++) {
+                    if (ratio <= heroImages[i].max) {
+                        selected = heroImages[i].img;
+                        break;
+                    }
+                }
+
+                hero.style.setProperty("--hero-img", `url('${selected}')`);
+            }
+
+        // Function for stats
+            function updateStats(currentValue) {
+                const value = parseInt(currentValue);
+                const midpoint = (min + max) / 2;
+                let scale;
+
+                if (value <= midpoint) {
+                    const localScale = (value - min) / (midpoint - min);
+                    scale = 0.005 + localScale * 0.995;
+                } else {
+                    const localScale = (value - midpoint) / (max - midpoint);
+                    scale = 1.0 + localScale * 1.0;
+                }
+
+                beneficiariesEl.textContent = Math.round(beneficiariesFull * scale);
+                projectsEl.textContent = Math.round(projectsFull * scale);
+                teachersEl.textContent = Math.round(teachersFull * scale);
+            }
+
+        // Initial run
+            updateStats(slider.value);
+            updateImg(slider.value);
+
+        // Initial run
+            sliderValue.textContent = slider.value; // Add this line
+            updateStats(slider.value);
+            updateImg(slider.value);
+
+
+            slider.addEventListener('input', () => {
+                sliderValue.textContent = slider.value;
+                updateStats(slider.value);
+                updateImg(slider.value);
+            });
+        });
+    </script>
+
+{% endblock %}

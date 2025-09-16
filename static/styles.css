@@ -1,0 +1,90 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    background-color: #fafafa;
+}
+
+main {
+    flex: 1;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+a {
+    color: #ffffff !important;
+}
+
+.footer {
+    background-color: #0d6efd;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.hero {
+    position: relative;
+    height: 700px;
+    background:
+        linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 50%),
+        var(--hero-img) no-repeat center center;
+    background-size: cover;
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    border-radius: 5px;
+    justify-content: center;
+    font-family: 'Segoe UI', sans-serif;
+    padding-bottom: 3rem;
+    text-align: center;
+}
+
+.hero-content {
+    color: #ffffff;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.mb-3 {
+    text-align: left;
+}
+
+#thanks {
+    border-radius: 5px;
+    max-width: 50%
+}
+
+.donations {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    /* Optional: adds some space above */
+}
+
+.donations table {
+    margin: 0 auto;
+    /* Ensures the table itself is centered */
+    border-collapse: collapse;
+}
+
+.donations table th,
+.donations table td {
+    padding: 8px 12px;
+    text-align: center;
+    /* Optional: center text inside cells */
+}

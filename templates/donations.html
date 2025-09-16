@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Donations
+{% endblock %}
+
+{% block main %}
+    <h1>Latest donations</h1>
+    <section class="donations">
+        {{ donations|safe }}
+    </section>
+
+{% endblock %}

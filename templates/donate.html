@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Donate
+{% endblock %}
+
+{% block main %}
+    <img id="thanks" src="static/hope.webp" class="img-fluid" alt="Thank you!">
+    <h1>One more step until you're helping SO MANY!</h1>
+    <form action="/thanks" method="POST" id="donation-form">
+        <div class="mb-3">
+            <label for="first-name" class="form-label">First Name</label>
+            <input type="text" class="form-control" name="first-name" id="first-name">
+        </div>
+        <div class="mb-3">
+            <label for="last-name" class="form-label">Last Name</label>
+            <input type="text" class="form-control" name="last-name" id="last-name">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label for="amount" class="form-label">Amount</label>
+            <input type="number" class="form-control" name="donation" value="{{ donation }}" id="donation_amount">
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" required="required">
+            <label class="form-check-label" for="exampleCheck1">I accept the TOS</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+{% endblock %}
